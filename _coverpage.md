@@ -1,110 +1,128 @@
-<!-- STIA Portal — Bento Grid Interface -->
-<section class="min-h-screen flex items-center justify-center py-20 px-4">
-<div class="max-w-6xl w-full">
-<!-- Hero Header -->
-<div class="text-center mb-16 space-y-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold tracking-[0.2em] uppercase">
-<span class="relative flex h-2 w-2">
+<!-- STIA Portal 2.0 — Fluid Matrix Interface -->
+<section class="min-h-screen flex items-center justify-center py-24 px-6">
+<div class="max-w-7xl w-full">
+
+<!-- Hero Header: System Identity -->
+<div class="text-center mb-20 space-y-6 animate-in fade-in slide-in-from-bottom-12 duration-1000">
+<div class="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold tracking-[0.25em] uppercase">
+<span class="relative flex h-2.5 w-2.5">
 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
 </span>
-<span>Neural Uplink Active</span>
+<span>Neural Link: Synchronized</span>
 </div>
-<h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tighter">
-STIA <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">MATRIX</span>
+<h1 class="text-6xl md:text-8xl font-black text-white tracking-tightest">
+STIA <span class="text-transparent bg-clip-text bg-gradient-to-br from-cyan-300 via-cyan-500 to-blue-600">MATRIX</span>
 </h1>
-<p class="text-slate-400 max-w-2xl mx-auto text-lg md:text-xl font-medium leading-relaxed">
-Technical Intelligence Agency Command Center for UDARA AI. <br class="hidden md:block">
-Offline-first AMR surveillance for sub-Saharan Africa.
+<p class="text-slate-400 max-w-3xl mx-auto text-xl md:text-2xl font-light leading-relaxed tracking-tight">
+Technical Intelligence Agency Command Center for UDARA AI. <br class="hidden lg:block">
+The definitive offline-first AMR surveillance protocol for Sub-Saharan Africa.
 </p>
 </div>
-<!-- Bento Grid -->
-<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 auto-rows-[180px]">
-<!-- Primary Action -->
-<a href="#/01-architecture-overview" class="md:col-span-2 lg:col-span-3 row-span-2 group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50 p-8 flex flex-col justify-end transition-all hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.1)]">
-<div class="absolute top-0 right-0 p-8 text-cyan-500/20 group-hover:text-cyan-400/40 transition-colors">
-<i data-lucide="zap" class="w-32 h-32 rotate-12 translate-x-10 -translate-y-10"></i>
+
+<!-- Bento Grid 2.0: Fluid Architecture -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+<!-- Primary Directive: Large Square -->
+<a href="#/01-architecture-overview" class="lg:col-span-2 lg:row-span-2 group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/40 p-10 flex flex-col justify-end transition-all duration-500 hover:border-cyan-500/40 hover:shadow-[0_0_50px_rgba(34,211,238,0.15)]">
+<div class="absolute top-0 right-0 p-12 text-cyan-500/10 group-hover:text-cyan-400/20 transition-all duration-700">
+<i data-lucide="satellite-dish" class="w-64 h-64 rotate-12 translate-x-16 -translate-y-16 group-hover:rotate-[25deg] group-hover:scale-110"></i>
 </div>
-<div class="relative z-10 space-y-2">
-<div class="text-cyan-400 font-bold tracking-widest text-xs uppercase">Initiate Protocol</div>
-<h2 class="text-3xl font-bold text-white leading-tight">Architecture <br>Overview</h2>
-<p class="text-slate-400 text-sm max-w-[200px]">Begin system exploration and architectural deep-dive.</p>
+<div class="relative z-10 space-y-4">
+<div class="flex items-center space-x-3 text-cyan-400 font-bold tracking-widest text-sm uppercase">
+<i data-lucide="zap" class="w-4 h-4"></i>
+<span>Core Directive</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-black text-white leading-[0.9] tracking-tighter">System <br>Architecture</h2>
+<p class="text-slate-400 text-lg max-w-sm font-medium">Deconstruct the hybrid edge-cloud infrastructure and neural processing pipeline.</p>
 </div>
 </a>
-<!-- System Status -->
-<div class="md:col-span-2 lg:col-span-3 row-span-1 rounded-3xl border border-white/10 bg-slate-900/50 p-6 flex items-center space-x-6">
-<div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-<i data-lucide="cpu" class="w-8 h-8"></i>
-</div>
-<div>
-<div class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Local Edge Processing</div>
-<div class="text-xl font-bold text-slate-200">8GB LPDDR4X</div>
-<div class="text-xs text-cyan-500/80 font-medium flex items-center space-x-1 mt-1">
-<i data-lucide="check-circle" class="w-3 h-3"></i>
-<span>Optimized for RPi 5</span>
-</div>
-</div>
-</div>
-<!-- Network Stats -->
-<div class="md:col-span-1 lg:col-span-1 row-span-1 rounded-3xl border border-white/10 bg-slate-900/50 p-6 flex flex-col justify-between">
-<div class="text-cyan-400"><i data-lucide="globe"></i></div>
-<div>
-<div class="text-2xl font-bold text-white">48</div>
-<div class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Member States</div>
-</div>
-</div>
-<!-- Tech Stack -->
-<div class="md:col-span-1 lg:col-span-2 row-span-1 rounded-3xl border border-white/10 bg-slate-900/50 p-6 flex flex-col justify-between group cursor-default">
-<div class="flex items-center justify-between">
-<span class="text-cyan-400"><i data-lucide="layers"></i></span>
-<span class="text-[10px] bg-white/5 text-slate-400 px-2 py-1 rounded border border-white/5 font-bold uppercase tracking-widest">Stack</span>
-</div>
-<div class="flex flex-wrap gap-2 mt-4">
-<span class="text-[9px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-white/5">Python</span>
-<span class="text-[9px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-white/5">TypeScript</span>
-<span class="text-[9px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-white/5">Docker</span>
-<span class="text-[9px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-white/5">AWS</span>
-</div>
-</div>
-<!-- Live Monitoring -->
-<div class="md:col-span-2 lg:col-span-2 row-span-2 rounded-3xl border border-white/10 bg-slate-900/80 p-6 overflow-hidden relative">
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(34,211,238,0.1),transparent_70%)]"></div>
+
+<!-- Live Monitoring: Vertical High-Data Card -->
+<div class="lg:col-span-1 lg:row-span-2 rounded-[2.5rem] border border-white/10 bg-slate-950/80 p-8 flex flex-col group relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="relative z-10 flex flex-col h-full">
-<div class="flex items-center justify-between mb-4">
-<span class="text-xs font-bold text-slate-400 tracking-widest uppercase italic">Real-time Stream</span>
-<span class="flex h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center space-x-2">
+<i data-lucide="activity" class="w-4 h-4 text-red-500"></i>
+<span class="text-xs font-black text-slate-400 tracking-widest uppercase italic">Pulse Monitor</span>
 </div>
-<div class="space-y-3 font-mono text-[10px] opacity-40 leading-tight">
-<div>> SYSTEM_BOOT_SEQUENCE: SUCCESS</div>
-<div>> NEURAL_CORE_LOADED: 100%</div>
-<div>> EDGE_NODE_ID: RPI-AF-820</div>
-<div>> SYNC_DAEMON_ACTIVE: TRUE</div>
-<div>> SCANNING_AMR_SIGNATURES...</div>
-<div class="text-cyan-400">> ENCRYPTED_DATA_BURST: [OK]</div>
+<span class="flex h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]"></span>
 </div>
-<div class="mt-auto pt-4 border-t border-white/5">
-<div class="flex items-center space-x-2 text-cyan-400/60 mb-1">
-<i data-lucide="shield-check" class="w-4 h-4"></i>
-<span class="text-[10px] font-bold uppercase tracking-widest">Security Protocol</span>
-</div>
-<div class="text-white font-bold">mTLS + JWT Active</div>
+<div class="space-y-4 font-mono text-xs leading-relaxed text-slate-500">
+<div class="flex justify-between"><span class="opacity-40">> BOOT:</span> <span class="text-cyan-400">SUCCESS</span></div>
+<div class="flex justify-between"><span class="opacity-40">> CORE:</span> <span class="text-cyan-400">UDARA_V2</span></div>
+<div class="flex justify-between"><span class="opacity-40">> NODE:</span> <span class="text-white">AF-WEST-01</span></div>
+<div class="flex justify-between"><span class="opacity-40">> SYNC:</span> <span class="text-cyan-400">ACTIVE</span></div>
+<div class="pt-2 opacity-30">SCANNING_SURVEILLANCE_MATRIX...</div>
+<div class="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-cyan-500 w-[65%] animate-[progress_2s_ease-in-out_infinite]"></div>
 </div>
 </div>
+<div class="mt-auto pt-8 border-t border-white/5">
+<div class="flex items-center space-x-3 text-cyan-400/80 mb-2">
+<i data-lucide="shield-alert" class="w-5 h-5"></i>
+<span class="text-xs font-black uppercase tracking-widest">Security Layer</span>
 </div>
-<!-- Secondary Links -->
-<a href="https://github.com/teaminnovatorx/stia_docs_" target="_blank" class="md:col-span-1 lg:col-span-1 row-span-1 rounded-3xl border border-white/10 bg-slate-900/50 p-6 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
-<i data-lucide="github" class="w-8 h-8 text-slate-500 group-hover:text-white transition-colors mb-2"></i>
-<span class="text-[10px] text-slate-500 group-hover:text-slate-200 uppercase tracking-widest font-bold transition-colors">Repository</span>
+<div class="text-white font-bold text-lg leading-tight italic">Quantum-Safe <br>Encryption Enabled</div>
+</div>
+</div>
+</div>
+
+<!-- Resource Card: Stats -->
+<div class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-between group">
+<div class="flex items-center justify-between">
+<i data-lucide="globe" class="w-8 h-8 text-cyan-500"></i>
+<span class="text-3xl font-black text-white">48</span>
+</div>
+<div>
+<div class="text-xs text-slate-500 uppercase tracking-widest font-bold">Active Regions</div>
+<div class="text-[10px] text-cyan-400 mt-1 uppercase font-black">Member States Synced</div>
+</div>
+</div>
+
+<!-- Resource Card: Tech Stack -->
+<div class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-between group">
+<div class="flex items-center justify-between">
+<i data-lucide="layers" class="w-8 h-8 text-cyan-500"></i>
+<span class="text-[10px] bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/20 font-bold uppercase tracking-widest">v2.5</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-4 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="text-[9px] px-2 py-1 rounded-md bg-slate-800 text-slate-200 border border-white/5 font-bold">PyTorch</div>
+<div class="text-[9px] px-2 py-1 rounded-md bg-slate-800 text-slate-200 border border-white/5 font-bold">Rust</div>
+<div class="text-[9px] px-2 py-1 rounded-md bg-slate-800 text-slate-200 border border-white/5 font-bold">Balena</div>
+</div>
+</div>
+
+<!-- Secondary Actions: Repository -->
+<a href="https://github.com/teaminnovatorx/stia_docs_" target="_blank" class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
+<i data-lucide="github" class="w-10 h-10 text-slate-500 group-hover:text-white transition-all duration-300 mb-3 group-hover:scale-110"></i>
+<span class="text-xs text-slate-500 group-hover:text-slate-200 uppercase tracking-widest font-black transition-colors">STIA Binary Repo</span>
 </a>
-<!-- Tech Deep Dive -->
-<a href="#/03-tech-stack" class="md:col-span-1 lg:col-span-1 row-span-1 rounded-3xl border border-white/10 bg-slate-900/50 p-6 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
-<i data-lucide="terminal" class="w-8 h-8 text-slate-500 group-hover:text-cyan-400 transition-colors mb-2"></i>
-<span class="text-[10px] text-slate-500 group-hover:text-slate-200 uppercase tracking-widest font-bold transition-colors">Tech Stack</span>
+
+<!-- Secondary Actions: Tech Deep Dive -->
+<a href="#/03-tech-stack" class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
+<i data-lucide="terminal" class="w-10 h-10 text-slate-500 group-hover:text-cyan-400 transition-all duration-300 mb-3 group-hover:scale-110"></i>
+<span class="text-xs text-slate-500 group-hover:text-slate-200 uppercase tracking-widest font-black transition-colors">Stack Diagnostics</span>
 </a>
+
 </div>
-<!-- System Footer -->
-<div class="mt-16 text-center text-slate-600 font-mono text-[10px] tracking-[0.3em] uppercase opacity-40">
-Security Clearance: Level 4 • STIA Command Matrix • 2026 Edition
+
+<!-- System Footer: Clearance Info -->
+<div class="mt-20 text-center space-y-4">
+<div class="inline-block h-px w-24 bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+<div class="text-slate-600 font-mono text-xs tracking-[0.4em] uppercase opacity-40">
+STIA COMMAND MATRIX // SECURITY LEVEL 4 // 2026 EDITION
 </div>
+</div>
+
 </div>
 </section>
+
+<style>
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.tracking-tightest { letter-spacing: -0.06em; }
+</style>

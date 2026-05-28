@@ -310,6 +310,17 @@
       subMaxLevel: 3,
       auto2top: true,
       maxLevel: 4,
+      executeScript: true,
+      markdown: {
+        renderer: {
+          paragraph(text) {
+            if (text.startsWith('<') && text.endsWith('>')) {
+              return text;
+            }
+            return '<p>' + text + '</p>';
+          }
+        }
+      },
       search: {
         placeholder: 'Search Matrix...',
         noData: 'No matches found in STIA archives.',
@@ -329,7 +340,16 @@
         theme: 'classic',   
         tabComments: true,  
         tabHeadings: true   
-      }
+      },
+      plugins: [
+        function(hook, vm) {
+          hook.doneEach(function() {
+            if (window.lucide) {
+              window.lucide.createIcons();
+            }
+          });
+        }
+      ]
     }
 
     // System Clock Update
