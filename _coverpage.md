@@ -95,13 +95,13 @@ The definitive offline-first AMR surveillance protocol for Sub-Saharan Africa.
 </div>
 
 <!-- Secondary Actions: Repository -->
-<a href="https://github.com/teaminnovatorx/stia_docs_" target="_blank" class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
+<a href="https://github.com/teaminnovatorx/stia_docs_" target="_blank" class="lg:col-span-2 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
 <i data-lucide="github" class="w-10 h-10 text-slate-500 group-hover:text-white transition-all duration-300 mb-3 group-hover:scale-110"></i>
 <span class="text-xs text-slate-500 group-hover:text-slate-200 uppercase tracking-widest font-black transition-colors">STIA Binary Repo</span>
 </a>
 
 <!-- Secondary Actions: Tech Deep Dive -->
-<a href="#/03-tech-stack" class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
+<a href="#/03-tech-stack" class="lg:col-span-2 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-center items-center group transition-all hover:bg-white/5">
 <i data-lucide="terminal" class="w-10 h-10 text-slate-500 group-hover:text-cyan-400 transition-all duration-300 mb-3 group-hover:scale-110"></i>
 <span class="text-xs text-slate-500 group-hover:text-slate-200 uppercase tracking-widest font-black transition-colors">Stack Diagnostics</span>
 </a>
