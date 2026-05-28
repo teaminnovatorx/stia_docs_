@@ -373,7 +373,7 @@
   <script>
     window.$docsify = {
       name: '<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:18px;">🧬</span><span>UDARA AI</span></div>',
-      nameLink: '/',
+      nameLink: '/stia_docs_/',
       loadSidebar: true,
       coverpage: true,
       onlyCover: true,
@@ -396,7 +396,20 @@
         crossChapterText: true
       },
       topMargin: 56,
-      loadNavbar: false
+      loadNavbar: false,
+      afterEach: function(hook) {
+        hook.afterEach(function(html) {
+          setTimeout(function() {
+            document.querySelectorAll('.docsify-pagination-container a').forEach(function(a) {
+              var href = a.getAttribute('href');
+              if (href && !href.startsWith('http') && !href.startsWith('/stia_docs_/')) {
+                a.setAttribute('href', '/stia_docs_/' + href.replace(/^\//, ''));
+              }
+            });
+          }, 100);
+          return html;
+        });
+      }
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
