@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ feat/stia-docs-astro ]
+    branches: [ stia-docs-astro ]
 
 permissions:
   contents: read
