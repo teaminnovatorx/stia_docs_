@@ -1,7 +1,7 @@
 # 06 — Docker Development Environment
 
 > **UDARA AI** — AMR Surveillance Platform for Sub-Saharan Africa  
-> Document Version: 2.1.0 | Last Updated: 2025-01-15 | Status: Production
+> Document Version: 2.1.0 | Last Updated: 2026-05-27 | Status: Production
 
 ---
 

@@ -1,7 +1,7 @@
 # 05 — Edge-Cloud Sync Protocol
 
 > **UDARA AI** — AMR Surveillance Platform for Sub-Saharan Africa  
-> Document Version: 2.1.0 | Last Updated: 2025-01-15 | Status: Production
+> Document Version: 2.1.0 | Last Updated: 2026-05-27 | Status: Production
 
 ---
 
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS sync_queue (
     record_type     TEXT    NOT NULL,          -- 'case' | 'resistance' | 'alert' | 'ussd_session'
     operation       TEXT    NOT NULL CHECK(operation IN ('INSERT','UPDATE','DELETE')),
     payload         TEXT    NOT NULL,          -- JSON: full record snapshot at time of change
-    hlc_timestamp   TEXT    NOT NULL,          -- Hybrid Logical Clock: "2025-01-15T10:30:00.000Z:0003:device-abc"
+    hlc_timestamp   TEXT    NOT NULL,          -- Hybrid Logical Clock: "2026-05-27T10:30:00.000Z:0003:device-abc"
     priority        INTEGER NOT NULL DEFAULT 5,-- 1=highest (AMR alerts) 10=lowest (telemetry)
     retries         INTEGER NOT NULL DEFAULT 0,
     max_retries     INTEGER NOT NULL DEFAULT 10,
@@ -239,8 +239,8 @@ CREATE TABLE IF NOT EXISTS sync_queue (
   "sync_version": "2.1.0",
   "device_id": "udara-edge-KE-NRB-0042",
   "batch_id": "b7f3c291-8a4e-4d6f-b912-3e8c5f0a1d72",
-  "batch_timestamp": "2025-01-15T10:30:00.000Z",
-  "hlc_timestamp": "2025-01-15T10:30:00.000Z:0003:udara-edge-KE-NRB-0042",
+  "batch_timestamp": "2026-05-27T10:30:00.000Z",
+  "hlc_timestamp": "2026-05-27T10:30:00.000Z:0003:udara-edge-KE-NRB-0042",
   "total_records": 3,
   "compressed_size_bytes": 512,
   "encryption": {
@@ -256,7 +256,7 @@ CREATE TABLE IF NOT EXISTS sync_queue (
       "record_id": "case-2025-KE-NRB-00391",
       "record_type": "case",
       "operation": "INSERT",
-      "hlc_timestamp": "2025-01-15T10:28:15.234Z:0001:udara-edge-KE-NRB-0042",
+      "hlc_timestamp": "2026-05-27T10:28:15.234Z:0001:udara-edge-KE-NRB-0042",
       "priority": 2,
       "payload": {
         "patient_age_years": 34,
@@ -292,7 +292,7 @@ CREATE TABLE IF NOT EXISTS sync_queue (
       "record_id": "resistance-KE-NRB-2025-W02",
       "record_type": "resistance",
       "operation": "UPDATE",
-      "hlc_timestamp": "2025-01-15T10:29:45.891Z:0002:udara-edge-KE-NRB-0042",
+      "hlc_timestamp": "2026-05-27T10:29:45.891Z:0002:udara-edge-KE-NRB-0042",
       "priority": 5,
       "payload": {
         "drug": "ciprofloxacin",
@@ -308,7 +308,7 @@ CREATE TABLE IF NOT EXISTS sync_queue (
         "trend": "increasing",
         "trend_slope": 0.034,
         "sample_size_met": true,
-        "computed_at": "2025-01-15T10:29:45.000Z"
+        "computed_at": "2026-05-27T10:29:45.000Z"
       }
     },
     {
@@ -316,7 +316,7 @@ CREATE TABLE IF NOT EXISTS sync_queue (
       "record_id": "alert-2025-KE-NRB-001",
       "record_type": "alert",
       "operation": "INSERT",
-      "hlc_timestamp": "2025-01-15T10:30:00.000Z:0003:udara-edge-KE-NRB-0042",
+      "hlc_timestamp": "2026-05-27T10:30:00.000Z:0003:udara-edge-KE-NRB-0042",
       "priority": 1,
       "payload": {
         "alert_type": "RESISTANCE_THRESHOLD",
@@ -357,7 +357,7 @@ TRANSFORM_RULES = {
     "patient_age_years": "patient_age_group",       # 34 → "25-34"
     "gps_lat,gps_lon": "geohash_5",                  # -1.2921,36.8219 → "k17fqv"
     "facility_name": "facility_code",                # "Kenyatta Hosp" → "KE-NRB-FAC-017"
-    "exact_datetime": "date_only",                   # "2025-01-15T10:28:15Z" → "2025-01-15"
+    "exact_datetime": "date_only",                   # "2026-05-27T10:28:15Z" → "2026-05-27"
     "drug_dose_exact": "drug_dose_mg",               # "500mg" → 500 (integer)
 }
 
@@ -436,7 +436,7 @@ import hashlib
 class HLCTimestamp:
     """
     Hybrid Logical Clock timestamp.
-    Format: "2025-01-15T10:30:00.000Z:0003:device-id"
+    Format: "2026-05-27T10:30:00.000Z:0003:device-id"
     """
     physical_time: datetime
     logical_counter: int
@@ -2039,7 +2039,7 @@ CLOUD                              EDGE
 ```json
 {
   "manifest_version": "1.0",
-  "generated_at": "2025-01-15T12:00:00Z",
+  "generated_at": "2026-05-27T12:00:00Z",
   "models": [
     {
       "name": "agent-a-clinical",
