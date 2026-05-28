@@ -1,27 +1,26 @@
 ---
 import { getCollection } from 'astro:content';
-import { Play, Component, LayoutTemplate, BrainCircuit, Users, Shield, Server, PlusSquare, Command } from 'lucide-react';
 
 const docs = await getCollection('docs');
 
 const sections = [
-  { icon: Play, label: 'Directives', links: ['index.md', 'PS.md', 'README.md'] },
-  { icon: Component, label: 'Architecture', links: ['01-architecture-overview.md', '02-three-door-interface.md', '03-tech-stack.md', '05-edge-cloud-sync.md', '06-docker-dev-environment.md', '07-database-schemas.md', '08-api-contracts.md'] },
-  { icon: LayoutTemplate, label: 'Interfaces', links: ['09-ussd-strategy.md', '10-dual-messenger-strategy.md', '19-voice-first-interface.md', '21-multilingual-support.md'] },
-  { icon: BrainCircuit, label: 'Neural & ML', links: ['17-predictive-resistance-forecasting.md', '18-outbreak-simulator.md', '23-snap-detect-drug-ocr.md'] },
-  { icon: Users, label: 'Command Team', links: ['04-team-overview-sprint-plan.md', '12-member-01-ml-ai.md', '13-member-02-backend-edge.md', '15-member-03-frontend-engineer.md', '16-member-04-integration-bot-engineer.md'] },
-  { icon: Shield, label: 'Security Matrix', links: ['11-security-privacy.md', '22-glass-compliance.md', '25-sync-protocol.md'] },
-  { icon: Server, label: 'Operations', links: ['20-deployment-devops.md', '26-ci-cd-pipeline.md', '27-pilot-plan.md', '28-monitoring-evaluation.md'] },
-  { icon: PlusSquare, label: 'System Extras', links: ['14-usps-features.md', '24-chw-gamification.md', '29-investor-demo-guide.md'] },
+  { icon: 'play', label: 'Directives', links: ['index.md', 'PS.md', 'README.md'] },
+  { icon: 'component', label: 'Architecture', links: ['01-architecture-overview.md', '02-three-door-interface.md', '03-tech-stack.md', '05-edge-cloud-sync.md', '06-docker-dev-environment.md', '07-database-schemas.md', '08-api-contracts.md'] },
+  { icon: 'layout-template', label: 'Interfaces', links: ['09-ussd-strategy.md', '10-dual-messenger-strategy.md', '19-voice-first-interface.md', '21-multilingual-support.md'] },
+  { icon: 'brain-circuit', label: 'Neural & ML', links: ['17-predictive-resistance-forecasting.md', '18-outbreak-simulator.md', '23-snap-detect-drug-ocr.md'] },
+  { icon: 'users', label: 'Command Team', links: ['04-team-overview-sprint-plan.md', '12-member-01-ml-ai.md', '13-member-02-backend-edge.md', '15-member-03-frontend-engineer.md', '16-member-04-integration-bot-engineer.md'] },
+  { icon: 'shield', label: 'Security Matrix', links: ['11-security-privacy.md', '22-glass-compliance.md', '25-sync-protocol.md'] },
+  { icon: 'server', label: 'Operations', links: ['20-deployment-devops.md', '26-ci-cd-pipeline.md', '27-pilot-plan.md', '28-monitoring-evaluation.md'] },
+  { icon: 'plus-square', label: 'System Extras', links: ['14-usps-features.md', '24-chw-gamification.md', '29-investor-demo-guide.md'] },
 ];
 
 const { currentSlug } = Astro.props;
 ---
 
 <div class="px-2 py-4 mb-4 border-b border-white/5">
-  <div class="flex items-center space-x-2 text-cyan-400 mb-1 px-4">
-    <Command className="w-4 h-4" />
-    <span class="text-[10px] font-bold uppercase tracking-widest text-left">System Control</span>
+  <div class="flex items-center space-x-2 text-cyan-400 mb-1 px-4 text-left">
+    <i data-lucide="command" class="w-4 h-4"></i>
+    <span class="text-[10px] font-bold uppercase tracking-widest">System Control</span>
   </div>
   <div class="text-xs text-slate-500 font-medium px-4 text-left">UDARA-OS Terminal v3.0</div>
 </div>
@@ -30,7 +29,7 @@ const { currentSlug } = Astro.props;
   {sections.map(section => (
     <div>
       <div class="flex items-center space-x-2 text-slate-100 font-bold text-[10px] px-4 mb-2 uppercase tracking-widest text-left">
-        <section.icon className="w-3 h-3 text-cyan-500" />
+        <i data-lucide={section.icon} class="w-3 h-3 text-cyan-500"></i>
         <span>{section.label}</span>
       </div>
       <ul class="space-y-1">
@@ -43,7 +42,7 @@ const { currentSlug } = Astro.props;
             <li>
               <a 
                 href={`/stia_docs_/docs/${slug}`}
-                class={`block px-8 py-1.5 text-xs transition-colors border-l-2 ${isActive ? 'text-cyan-400 border-cyan-500 bg-cyan-500/5' : 'text-slate-500 border-transparent hover:text-slate-300 hover:border-white/10 hover:bg-white/5'}`}
+                class={`block px-8 py-1.5 text-xs transition-colors border-l-2 text-left ${isActive ? 'text-cyan-400 border-cyan-500 bg-cyan-500/5' : 'text-slate-500 border-transparent hover:text-slate-300 hover:border-white/10 hover:bg-white/5'}`}
               >
                 {doc.id.replace('.md', '').replace(/^\d+-/, '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
               </a>

@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { Satellite, Github } from 'lucide-react';
 
 interface Props {
 	title: string;
@@ -21,19 +20,20 @@ const { title } = Astro.props;
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+		<script src="https://unpkg.com/lucide@latest"></script>
 	</head>
 	<body class="bg-udara-bg overflow-x-hidden">
 		<!-- System Bar -->
 		<nav class="fixed top-0 left-0 right-0 h-14 z-[999] bg-slate-950/50 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-6">
 			<div class="flex items-center space-x-3">
-				<Satellite className="text-cyan-400 w-5 h-5" />
+				<i data-lucide="satellite" class="text-cyan-400 w-5 h-5"></i>
 				<span class="font-bold tracking-tight text-slate-100">STIA <span class="text-cyan-500">DOCS</span></span>
 				<span class="text-[10px] bg-cyan-500/10 text-cyan-400 px-2 py-0.5 rounded-full border border-cyan-500/20 uppercase tracking-widest font-bold">UDARA-OS v3.0</span>
 			</div>
 			<div class="flex items-center space-x-6 text-sm font-medium text-slate-400">
 				<div id="system-clock" class="font-mono text-xs opacity-60">12:00:00 UTC</div>
 				<a href="https://github.com/teaminnovatorx/stia_docs_" target="_blank" class="hover:text-cyan-400 transition-colors flex items-center space-x-2">
-					<Github className="w-4 h-4" />
+					<i data-lucide="github" class="w-4 h-4"></i>
 					<span>Source</span>
 				</a>
 			</div>
@@ -50,6 +50,15 @@ const { title } = Astro.props;
 			}
 			setInterval(updateClock, 1000);
 			updateClock();
+
+			// Initialize icons on mount and after navigation
+			document.addEventListener('astro:page-load', () => {
+				lucide.createIcons();
+			});
+			// Initial load fallback
+			window.addEventListener('load', () => {
+				if (window.lucide) lucide.createIcons();
+			});
 		</script>
 	</body>
 </html>

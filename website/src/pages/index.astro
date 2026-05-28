@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Zap, Cpu, Globe, Layers, Activity, ShieldAlert, Github, Terminal, SatelliteDish, CheckCircle } from 'lucide-react';
 ---
 
 <Layout title="STIA Matrix — UDARA-OS">
@@ -33,15 +32,15 @@ import { Zap, Cpu, Globe, Layers, Activity, ShieldAlert, Github, Terminal, Satel
 				<!-- Primary Directive -->
 				<a href="/stia_docs_/docs/01-architecture-overview" class="lg:col-span-2 lg:row-span-2 group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-900/40 p-10 flex flex-col justify-end transition-all duration-500 hover:border-cyan-500/40 hover:shadow-[0_0_50px_rgba(34,211,238,0.15)]">
 					<div class="absolute top-0 right-0 p-12 text-cyan-500/10 group-hover:text-cyan-400/20 transition-all duration-700">
-						<SatelliteDish className="w-64 h-64 rotate-12 translate-x-16 -translate-y-16 group-hover:rotate-[25deg] group-hover:scale-110" />
+						<i data-lucide="satellite-dish" class="w-64 h-64 rotate-12 translate-x-16 -translate-y-16 group-hover:rotate-[25deg] group-hover:scale-110"></i>
 					</div>
-					<div class="relative z-10 space-y-4">
+					<div class="relative z-10 space-y-4 text-left">
 						<div class="flex items-center space-x-3 text-cyan-400 font-bold tracking-widest text-sm uppercase">
-							<Zap className="w-4 h-4" />
+							<i data-lucide="zap" class="w-4 h-4"></i>
 							<span>Core Directive</span>
 						</div>
-						<h2 class="text-4xl md:text-5xl font-black text-white leading-[0.9] tracking-tighter text-left">System <br>Architecture</h2>
-						<p class="text-slate-400 text-lg max-w-sm font-medium text-left">Deconstruct the hybrid edge-cloud infrastructure and neural processing pipeline.</p>
+						<h2 class="text-4xl md:text-5xl font-black text-white leading-[0.9] tracking-tighter">System <br>Architecture</h2>
+						<p class="text-slate-400 text-lg max-w-sm font-medium">Deconstruct the hybrid edge-cloud infrastructure and neural processing pipeline.</p>
 					</div>
 				</a>
 
@@ -50,8 +49,8 @@ import { Zap, Cpu, Globe, Layers, Activity, ShieldAlert, Github, Terminal, Satel
 					<div class="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 					<div class="relative z-10 flex flex-col h-full text-left">
 						<div class="flex items-center justify-between mb-8">
-							<div class="flex items-center space-x-2 text-left">
-								<Activity className="w-4 h-4 text-red-500" />
+							<div class="flex items-center space-x-2">
+								<i data-lucide="activity" class="w-4 h-4 text-red-500"></i>
 								<span class="text-xs font-black text-slate-400 tracking-widest uppercase italic">Pulse Monitor</span>
 							</div>
 							<span class="flex h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]"></span>
@@ -67,11 +66,11 @@ import { Zap, Cpu, Globe, Layers, Activity, ShieldAlert, Github, Terminal, Satel
 							</div>
 						</div>
 						<div class="mt-auto pt-8 border-t border-white/5">
-							<div class="flex items-center space-x-3 text-cyan-400/80 mb-2 text-left">
-								<ShieldAlert className="w-5 h-5" />
-								<span class="text-xs font-black uppercase tracking-widest text-left">Security Layer</span>
+							<div class="flex items-center space-x-3 text-cyan-400/80 mb-2">
+								<i data-lucide="shield-alert" class="w-5 h-5"></i>
+								<span class="text-xs font-black uppercase tracking-widest">Security Layer</span>
 							</div>
-							<div class="text-white font-bold text-lg leading-tight italic text-left tracking-tight">Quantum-Safe <br>Encryption Active</div>
+							<div class="text-white font-bold text-lg leading-tight italic tracking-tight">Quantum-Safe <br>Encryption Active</div>
 						</div>
 					</div>
 				</div>
@@ -79,51 +78,51 @@ import { Zap, Cpu, Globe, Layers, Activity, ShieldAlert, Github, Terminal, Satel
 				<!-- Stats Card -->
 				<div class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-between group text-left">
 					<div class="flex items-center justify-between">
-						<Globe className="w-8 h-8 text-cyan-500" />
+						<i data-lucide="globe" class="w-8 h-8 text-cyan-500"></i>
 						<span class="text-3xl font-black text-white tracking-tighter">48</span>
 					</div>
 					<div>
-						<div class="text-xs text-slate-500 uppercase tracking-widest font-bold text-left">Active Regions</div>
-						<div class="text-[10px] text-cyan-400 mt-1 uppercase font-black text-left">Member States Synced</div>
+						<div class="text-xs text-slate-500 uppercase tracking-widest font-bold">Active Regions</div>
+						<div class="text-[10px] text-cyan-400 mt-1 uppercase font-black">Member States Synced</div>
 					</div>
 				</div>
 
 				<!-- Tech Card -->
 				<div class="lg:col-span-1 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex flex-col justify-between group text-left">
 					<div class="flex items-center justify-between">
-						<Layers className="w-8 h-8 text-cyan-500" />
-						<span class="text-[10px] bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/20 font-bold uppercase tracking-widest">ASTRA v5</span>
+						<i data-lucide="layers" class="w-8 h-8 text-cyan-500"></i>
+						<span class="text-[10px] bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/20 font-bold uppercase tracking-widest">ASTRA v4</span>
 					</div>
 					<div class="flex flex-wrap gap-2 mt-4 opacity-70 group-hover:opacity-100 transition-opacity">
-						<div class="text-[9px] px-2 py-1 rounded-md bg-slate-800 text-slate-200 border border-white/5 font-bold uppercase">React</div>
+						<div class="text-[9px] px-2 py-1 rounded-md bg-slate-800 text-slate-200 border border-white/5 font-bold uppercase">Astro</div>
 						<div class="text-[9px] px-2 py-1 rounded-md bg-slate-800 text-slate-200 border border-white/5 font-bold uppercase">Tailwind</div>
 						<div class="text-[9px] px-2 py-1 rounded-md bg-slate-800 text-slate-200 border border-white/5 font-bold uppercase">MDX</div>
 					</div>
 				</div>
 
 				<!-- Actions -->
-				<a href="https://github.com/teaminnovatorx/stia_docs_" target="_blank" class="lg:col-span-2 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex items-center justify-between group transition-all hover:bg-white/5">
-					<div class="flex items-center space-x-6 text-left">
-						<Github className="w-10 h-10 text-slate-500 group-hover:text-white transition-all duration-300 group-hover:scale-110" />
+				<a href="https://github.com/teaminnovatorx/stia_docs_" target="_blank" class="lg:col-span-2 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex items-center justify-between group transition-all hover:bg-white/5 text-left">
+					<div class="flex items-center space-x-6">
+						<i data-lucide="github" class="w-10 h-10 text-slate-500 group-hover:text-white transition-all duration-300 group-hover:scale-110"></i>
 						<div>
-							<div class="text-xs text-slate-500 uppercase tracking-widest font-black text-left">Source Code</div>
-							<div class="text-xl font-bold text-white tracking-tight text-left">STIA Binary Repository</div>
+							<div class="text-xs text-slate-500 uppercase tracking-widest font-black">Source Code</div>
+							<div class="text-xl font-bold text-white tracking-tight">STIA Binary Repository</div>
 						</div>
 					</div>
-					<Terminal className="w-6 h-6 text-cyan-500/20 group-hover:text-cyan-400 transition-colors" />
+					<i data-lucide="terminal" class="w-6 h-6 text-cyan-500/20 group-hover:text-cyan-400 transition-colors"></i>
 				</a>
 
-				<a href="/stia_docs_/docs/03-tech-stack" class="lg:col-span-2 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex items-center justify-between group transition-all hover:bg-white/5">
-					<div class="flex items-center space-x-6 text-left">
+				<a href="/stia_docs_/docs/03-tech-stack" class="lg:col-span-2 lg:row-span-1 rounded-[2rem] border border-white/10 bg-slate-900/40 p-8 flex items-center justify-between group transition-all hover:bg-white/5 text-left">
+					<div class="flex items-center space-x-6">
 						<div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 border border-cyan-500/20">
-							<Terminal className="w-6 h-6" />
+							<i data-lucide="terminal" class="w-6 h-6"></i>
 						</div>
 						<div>
-							<div class="text-xs text-slate-500 uppercase tracking-widest font-black text-left">Diagnostics</div>
-							<div class="text-xl font-bold text-white tracking-tight text-left">Full Stack Trace</div>
+							<div class="text-xs text-slate-500 uppercase tracking-widest font-black">Diagnostics</div>
+							<div class="text-xl font-bold text-white tracking-tight">Full Stack Trace</div>
 						</div>
 					</div>
-					<div class="text-xs font-mono text-cyan-500/40 font-black tracking-widest uppercase">Initiate_Trace</div>
+					<div class="text-xs font-mono text-cyan-500/40 font-black tracking-widest uppercase italic">Initiate_Trace</div>
 				</a>
 			</div>
 
