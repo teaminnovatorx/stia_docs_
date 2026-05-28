@@ -1241,5 +1241,5 @@ jobs:
 
 ---
 
-> **Next:** [04 — Edge AI Models](04-edge-ai-models.md)
+> **Next:** [04 — Team Overview & Sprint Plan](04-team-overview-sprint-plan.md)
 > **Prev:** [02 — Three-Door Interface](02-three-door-interface.md)
