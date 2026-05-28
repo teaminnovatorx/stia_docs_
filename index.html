@@ -245,19 +245,29 @@
       font-size: 0.9em;
       border: 1px solid rgba(34, 211, 238, 0.2);
     }
+/* Cover Page Overrides — Force Full Width */
+section.cover {
+  background: var(--base-background-color) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100vw !important;
+  padding: 0 !important;
+}
 
-    /* Cover Page Overrides */
-    section.cover {
-      background: var(--base-background-color) !important;
-    }
+.cover-main {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  z-index: 10;
+}
 
-    .cover-main {
-      z-index: 10;
-    }
+/* Content Area */
+.content {
+  padding-top: 80px !important;
+  width: 100% !important;
+}
 
-    /* Search Bar */
-    .search {
-      padding: 20px !important;
       border-bottom: 1px solid var(--glass-border) !important;
     }
 
