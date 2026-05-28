@@ -2107,6 +2107,149 @@ class VoicePipeline:
 
 ---
 
+## 8. Medical Vocabulary & Post-Processing
+
+### 8.1 Drug Name Normalization
+
+CHWs often use local brand names, abbreviations, or phonetic spellings. This module maps them to standardized INN (International Nonproprietary Names).
+
+```python
+DRUG_VOCABULARY = {
+    # Brand → INN mapping (West Africa focus)
+    'septrin': 'Co-trimoxazole',
+    'bactrim': 'Co-trimoxazole',
+    'augmentin': 'Amoxicillin-Clavulanate',
+    'zithromax': 'Azithromycin',
+    'flagyl': 'Metronidazole',
+    'rocephin': 'Ceftriaxone',
+    'cipro': 'Ciprofloxacin',
+    'amoxil': 'Amoxicillin',
+    'genta': 'Gentamicin',
+    'erythro': 'Erythromycin',
+    'tetracycline': 'Tetracycline',
+    'ampicillin': 'Ampicillin',
+    'cloxacillin': 'Cloxacillin',
+    'metronidazole': 'Metronidazole',
+    'norfloxacine': 'Norfloxacin',
+    'ofloxacine': 'Ofloxacin',
+    'levofloxacine': 'Levofloxacin',
+    'meropenem': 'Meropenem',
+    'cefuroxime': 'Cefuroxime',
+    'doxycycline': 'Doxycycline',
+}
+
+# Swahili drug terms
+DRUG_NAMES_SWAHILI = {
+    'dawa ya tumbo': 'Metronidazole',
+    'dawa ya homa': 'Artemether-Lumefantrine',
+    'dawa ya kufulua': 'Amoxicillin',
+    'damu': 'Co-trimoxazole',
+}
+
+# Yoruba drug terms
+DRUG_NAMES_YORUBA = {
+    'ogun arun': 'Metronidazole',
+    'ogun adagba': 'Amoxicillin',
+}
+```
+
+### 8.2 Symptom Terminology Mapping
+
+```python
+SYMPTOM_VOCABULARY = {
+    'swa': {
+        'maumau ya tumbo': {'name': 'abdominal_pain', 'category': 'gastrointestinal'},
+        'kuhara': {'name': 'diarrhea', 'category': 'gastrointestinal'},
+        'kipindupindu': {'name': 'cholera', 'category': 'gastrointestinal'},
+        'homa': {'name': 'fever', 'category': 'systemic'},
+        'kikohozi': {'name': 'cough', 'category': 'respiratory'},
+        'maumau ya kifua': {'name': 'chest_pain', 'category': 'respiratory'},
+        'uchovu': {'name': 'vomiting', 'category': 'gastrointestinal'},
+        'kaswende': {'name': 'dysentery', 'category': 'gastrointestinal'},
+    },
+    'yor': {
+        'inu obara': {'name': 'fever', 'category': 'systemic'},
+        'eje': {'name': 'diarrhea', 'category': 'gastrointestinal'},
+        'arun inu': {'name': 'stomach_pain', 'category': 'gastrointestinal'},
+    },
+    'hausa': {
+        'zazzarin cizon sauro': {'name': 'malaria', 'category': 'infectious'},
+        'rashin lafiya': {'name': 'illness', 'category': 'systemic'},
+        'ciwon kai': {'name': 'headache', 'category': 'neurological'},
+    },
+}
+```
+
+### 8.3 Duration & Dosage Extraction
+
+```python
+import re
+
+class DosageExtractor:
+    """Extract structured dosage info from ASR text."""
+    
+    DOSE_PATTERN = re.compile(
+        r'(\d+)\s*(mg|g|ml|tablets?|capsules?|teaspoons?|tableti?)',
+        re.IGNORECASE
+    )
+    DURATION_PATTERN = re.compile(
+        r'(\d+)\s*(days?|siku|days?|wiki|weeks?|mwezi|months?)',
+        re.IGNORECASE
+    )
+    FREQUENCY_PATTERN = re.compile(
+        r'(mara\s+\d+|times?\s+\d+|siku\s+\d+|mara\s+moja|mara\s+mbili|'
+        r'kila\s+\d+\s+masaa|once|twice|thrice|three\s+times)',
+        re.IGNORECASE
+    )
+
+    def extract(self, text: str) -> dict:
+        dose = self.DOSE_PATTERN.search(text)
+        duration = self.DURATION_PATTERN.search(text)
+        frequency = self.FREQUENCY_PATTERN.search(text)
+        return {
+            'dose': dose.group(0) if dose else None,
+            'duration': duration.group(0) if duration else None,
+            'frequency': frequency.group(0) if frequency else None,
+        }
+```
+
+### 8.4 Integration with ASR Pipeline
+
+```python
+class VoicePipeline:
+    """Complete voice → structured case pipeline."""
+    
+    def __init__(self):
+        self.asr_model = load_mms_asr()
+        self.lang_detector = LanguageDetector()
+        self.post_processor = MedicalPostProcessor()
+        self.dosage_extractor = DosageExtractor()
+    
+    async def process(self, audio_path: str) -> dict:
+        # 1. Detect language
+        lang, confidence = self.lang_detector.detect(audio_path)
+        
+        # 2. Transcribe
+        raw_text = self.asr_model.transcribe(audio_path, language=lang)
+        
+        # 3. Post-process: normalize drugs, numbers, terms
+        cleaned = self.post_processor.process(raw_text, lang)
+        
+        # 4. Extract structured fields
+        dosage = self.dosage_extractor.extract(cleaned)
+        
+        # 5. Build structured case
+        return {
+            'language': lang,
+            'transcription': raw_text,
+            'cleaned_text': cleaned,
+            'dosage': dosage,
+            'confidence': confidence,
+        }
+```
+
+---
+
 ## 9. Performance on Raspberry Pi 5
 
 ### 9.1 Benchmark Results
