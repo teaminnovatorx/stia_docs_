@@ -1,0 +1,69 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map(entry => ({
+    params: { slug: entry.id.replace('.md', '') }, 
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const currentSlug = entry.id.replace('.md', '');
+---
+
+<Layout title={`${currentSlug.replace(/^\d+-/, '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} — STIA Docs`}>
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="w-80 h-[calc(100vh-3.5rem)] fixed top-14 left-0 border-r border-white/5 bg-slate-950/30 backdrop-blur-xl overflow-y-auto p-6 hidden lg:block text-left">
+      <Sidebar currentSlug={currentSlug} />
+    </aside>
+
+    <!-- Content -->
+    <main class="flex-1 lg:ml-80 pt-20 px-8 pb-32">
+      <div class="max-w-4xl mx-auto">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center space-x-2 text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-12">
+           <a href="/stia_docs_/" class="hover:text-cyan-400 transition-colors">STIA_ROOT</a>
+           <span class="text-slate-800">/</span>
+           <span class="text-cyan-500/60">NODE_{currentSlug.toUpperCase().replace(/-/g, '_')}</span>
+        </nav>
+
+        <article class="prose prose-invert prose-cyan max-w-none text-left
+          prose-headings:tracking-tighter 
+          prose-h1:text-4xl prose-h1:font-black 
+          prose-h2:text-2xl prose-h2:font-bold prose-h2:border-b prose-h2:border-white/5 prose-h2:pb-2
+          prose-p:text-slate-400 prose-p:leading-relaxed
+          prose-pre:bg-slate-900/50 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl
+          prose-code:text-cyan-400 prose-code:bg-cyan-500/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none
+          prose-img:rounded-3xl prose-img:border prose-img:border-white/10
+          prose-blockquote:border-l-4 prose-blockquote:border-cyan-500 prose-blockquote:bg-cyan-500/5 prose-blockquote:py-4 prose-blockquote:px-8 prose-blockquote:rounded-r-2xl prose-blockquote:italic prose-blockquote:text-slate-300
+          ">
+          <Content />
+        </article>
+
+        <!-- Node Footer -->
+        <div class="mt-32 pt-8 border-t border-white/5 flex justify-between items-center opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
+           <div class="text-[10px] font-mono text-slate-500 tracking-widest">
+              END_OF_NODE: {currentSlug.toUpperCase()}
+           </div>
+           <div class="flex space-x-4">
+              <div class="h-1 w-12 bg-cyan-500/20 rounded-full"></div>
+              <div class="h-1 w-4 bg-cyan-500/40 rounded-full"></div>
+           </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<style is:global>
+  /* Custom prose overrides */
+  .prose :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    @apply text-cyan-400 no-underline hover:text-cyan-300 transition-colors;
+  }
+</style>
