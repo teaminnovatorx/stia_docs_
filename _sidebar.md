@@ -1,49 +1,65 @@
-<!-- sidebar -->
+<!-- STIA Docs — Matrix Navigation Control Panel -->
 
-- **Getting Started**
-  - [Home](/)
+<div class="px-6 py-4 mb-4 border-b border-white/5">
+  <div class="flex items-center space-x-2 text-cyan-400 mb-1">
+    <i data-lucide="command" class="w-4 h-4"></i>
+    <span class="text-[10px] font-bold uppercase tracking-widest">System Control</span>
+  </div>
+  <div class="text-xs text-slate-500 font-medium">UDARA-OS Terminal v2.5</div>
+</div>
+
+- <i data-lucide="play" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **Directives**
+  - [System Initialization](/)
   - [Problem Space](PS.md)
-  - [README](README.md)
+  - [Base README](README.md)
 
-- **Architecture**
-  - [System Architecture](01-architecture-overview.md)
+- <i data-lucide="component" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **Architecture**
+  - [Core Overview](01-architecture-overview.md)
   - [Three-Door Interface](02-three-door-interface.md)
-  - [Tech Stack](03-tech-stack.md)
+  - [Technology Stack](03-tech-stack.md)
   - [Edge-Cloud Sync](05-edge-cloud-sync.md)
-  - [Docker Dev Environment](06-docker-dev-environment.md)
-  - [Database Schemas](07-database-schemas.md)
-  - [API Contracts](08-api-contracts.md)
+  - [Docker Matrix](06-docker-dev-environment.md)
+  - [Data Schemas](07-database-schemas.md)
+  - [API Protocols](08-api-contracts.md)
 
-- **Interfaces**
-  - [USSD Strategy](09-ussd-strategy.md)
-  - [Dual Messenger](10-dual-messenger-strategy.md)
-  - [Voice-First Interface](19-voice-first-interface.md)
-  - [Multilingual Support](21-multilingual-support.md)
+- <i data-lucide="layout-template" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **Interfaces**
+  - [USSD Protocol](09-ussd-strategy.md)
+  - [Messenger Node](10-dual-messenger-strategy.md)
+  - [Voice-First UI](19-voice-first-interface.md)
+  - [Linguistic Logic](21-multilingual-support.md)
 
-- **AI & ML**
-  - [Resistance Forecasting](17-predictive-resistance-forecasting.md)
-  - [Outbreak Simulator](18-outbreak-simulator.md)
-  - [Snap-Detect Drug OCR](23-snap-detect-drug-ocr.md)
+- <i data-lucide="brain-circuit" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **Neural & ML**
+  - [Forecasting Engine](17-predictive-resistance-forecasting.md)
+  - [Outbreak Simulation](18-outbreak-simulator.md)
+  - [Snap-Detect OCR](23-snap-detect-drug-ocr.md)
 
-- **Team & Sprint**
+- <i data-lucide="users" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **Command Team**
   - [Team Overview](04-team-overview-sprint-plan.md)
-  - [Member 01: ML/AI](12-member-01-ml-ai.md)
-  - [Member 02: Backend+Edge](13-member-02-backend-edge.md)
-  - [Member 03: Frontend](15-member-03-frontend-engineer.md)
-  - [Member 04: Integration+Bot](16-member-04-integration-bot-engineer.md)
+  - [Node 01: ML/AI](12-member-01-ml-ai.md)
+  - [Node 02: Backend](13-member-02-backend-edge.md)
+  - [Node 03: Frontend](15-member-03-frontend-engineer.md)
+  - [Node 04: Integration](16-member-04-integration-bot-engineer.md)
 
-- **Security & Compliance**
-  - [Security & Privacy](11-security-privacy.md)
-  - [WHO GLASS Compliance](22-glass-compliance.md)
-  - [Sync Protocol](25-sync-protocol.md)
+- <i data-lucide="shield" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **Security Matrix**
+  - [Privacy Protocol](11-security-privacy.md)
+  - [GLASS Compliance](22-glass-compliance.md)
+  - [Sync Secure](25-sync-protocol.md)
 
-- **Deployment & Ops**
-  - [Deployment & DevOps](20-deployment-devops.md)
-  - [CI/CD Pipeline](26-ci-cd-pipeline.md)
-  - [Pilot Plan](27-pilot-plan.md)
-  - [Monitoring & Evaluation](28-monitoring-evaluation.md)
+- <i data-lucide="server" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **Operations**
+  - [DevOps Matrix](20-deployment-devops.md)
+  - [CI/CD Flux](26-ci-cd-pipeline.md)
+  - [Operational Pilot](27-pilot-plan.md)
+  - [M&E Diagnostics](28-monitoring-evaluation.md)
 
-- **Extras**
-  - [USPs & Features](14-usps-features.md)
-  - [CHW Gamification](24-chw-gamification.md)
-  - [Investor Demo Guide](29-investor-demo-guide.md)
+- <i data-lucide="plus-square" class="w-3 h-3 inline-block mr-2 text-cyan-500"></i> **System Extras**
+  - [USPs & Logic](14-usps-features.md)
+  - [Gamification](24-chw-gamification.md)
+  - [Investor Demo](29-investor-demo-guide.md)
+
+<div class="mt-8 px-6 pt-6 border-t border-white/5 opacity-40">
+  <div class="text-[9px] font-mono text-slate-500 leading-tight">
+    SYNC_STATUS: ONLINE<br>
+    UPTIME: 99.998%<br>
+    ENCRYPTION: AES-256
+  </div>
+</div>
